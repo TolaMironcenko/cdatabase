@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -o
-CFILES=main.c
+CFILES=main.c lib/files.c
 OUTFILES=cdatabase
 
 all:
