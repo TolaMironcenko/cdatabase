@@ -70,5 +70,19 @@ int main(int argc, char *argv[]) {
         }
         print_columns(argv[2], argv[3]);
     }
+    if (!strcmp(argv[1], "createdata")) {
+        if (argc < 6) {
+            printf("%sUse %s %s [database name] [table name] [some argument name] [some data]\n%s", YELLOW, argv[0], argv[1], RESET);
+            exit(0);
+        }
+        create_data(argv[2], argv[3], argc, argv);
+    }
+    if (!strcmp(argv[1], "getdata")) {
+        if (argc < 4) {
+            printf("%sUse %s %s [database name] [table name]\n%s", YELLOW, argv[0], argv[1], RESET);
+            exit(0);
+        }
+        print_data(argv[2], argv[3]);
+    }
     return 0;
 }
