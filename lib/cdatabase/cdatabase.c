@@ -217,7 +217,12 @@ void print_data(char *base_name, char *table_name) {
             {
                 break;
             }
-            printf("%s %s|%s ", some_data, BLUE, RESET);
+            for (int i = 0; i < 1024; i++) {
+              if (some_data[i] == '\n') {
+                some_data[i] = ' ';
+              }
+            }
+            printf("%s%s|%s ", some_data, BLUE, RESET);
         }
 //        printf("%s\n", some_data);
         fclose(datafile);
